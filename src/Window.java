@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Window extends JFrame implements ActionListener {
+    boolean turn = true;
     Toe toe = new Toe();
     JButton button1 = new JButton("Button 1");
     JButton button2 = new JButton("Button 2");
@@ -51,7 +52,7 @@ public class Window extends JFrame implements ActionListener {
         button8.addActionListener(this);
         button9.addActionListener(this);
 
-        while(toe.ganhou == false){
+        while(toe.ganhou == false || toe.lose == false){
         toe.Win();
         this.setVisible(true);}
 
@@ -59,53 +60,126 @@ public class Window extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (turn == true){
         if(e.getSource()==button1){
             button1.setEnabled(false);
             toe.a = 1;
             button1.setText("X");
+            turn = false;
         }
         if(e.getSource()==button2){
             button2.setEnabled(false);
             toe.b = 1;
             button2.setText("X");
+            turn = false;
         }
         if(e.getSource()==button3){
             button3.setEnabled(false);
             toe.c = 1;
             button3.setText("X");
+            turn = false;
         }
         if(e.getSource()==button4){
             button4.setEnabled(false);
             toe.b = 1;
             button4.setText("X");
+            turn = false;
         }
         if(e.getSource()==button5){
             button5.setEnabled(false);
             toe.c = 1;
             button5.setText("X");
+            turn = false;
         }
         if(e.getSource()==button6){
             button6.setEnabled(false);
             toe.a = 1;
             button6.setText("X");
+            turn = false;
         }
 
         if(e.getSource()==button7){
             button7.setEnabled(false);
             toe.c = 1;
             button7.setText("X");
+            turn = false;
         }
         if(e.getSource()==button8){
             button8.setEnabled(false);
             toe.a = 1;
             button8.setText("X");
+            turn = false;
         }
         if(e.getSource()==button9){
             button9.setEnabled(false);
             toe.b = 1;
             button9.setText("X");
+            turn = false;
+        }}
+//        @Override
+//        public void actionPerformed(ActionEvent e) {
+            else if (turn == false){
+                if(e.getSource()==button1){
+                    button1.setEnabled(false);
+                    toe.d = 1;
+                    button1.setText("O");
+                    turn = true;
+                }
+                if(e.getSource()==button2){
+                    button2.setEnabled(false);
+                    toe.e = 1;
+                    button2.setText("O");
+                    turn = true;
+                }
+                if(e.getSource()==button3){
+                    button3.setEnabled(false);
+                    toe.f = 1;
+                    button3.setText("O");
+                    turn = true;
+                }
+                if(e.getSource()==button4){
+                    button4.setEnabled(false);
+                    toe.e = 1;
+                    button4.setText("O");
+                    turn = true;
+                }
+                if(e.getSource()==button5){
+                    button5.setEnabled(false);
+                    toe.f = 1;
+                    button5.setText("O");
+                    turn = true;
+                }
+                if(e.getSource()==button6){
+                    button6.setEnabled(false);
+                    toe.d = 1;
+                    button6.setText("O");
+                    turn = true;
+                }
+
+                if(e.getSource()==button7){
+                    button7.setEnabled(false);
+                    toe.f = 1;
+                    button7.setText("O");
+                    turn = true;
+                }
+                if(e.getSource()==button8){
+                    button8.setEnabled(false);
+                    toe.d = 1;
+                    button8.setText("O");
+                    turn = true;
+                }
+                if(e.getSource()==button9){
+                    button9.setEnabled(false);
+                    toe.e = 1;
+                    button9.setText("O");
+                    turn = true;
+                }}
+
+
         }
-
-
     }
-}
+
+
+
+
+
