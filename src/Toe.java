@@ -3,7 +3,7 @@ public class Toe {
     int b = 0;
     int c = 0;
     boolean ganhou = false;
-    boolean lose;
+    boolean lose = false;
     Toe(){}
  void Win(){
         if(a == 1 && b == 1 && c == 1){
